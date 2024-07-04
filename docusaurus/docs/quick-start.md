@@ -75,6 +75,8 @@ Taking each code sample below, we will add each new block of code done after one
 
 Create a connection to our Couchbase Server running in Docker. 
 Your password may be different, just swap out yours if it is different.
+also when you want to use not the default collection and scope swap them out
+they are optional propertys.
 
 ```javascript
 const ottoman = require('ottoman');
@@ -84,7 +86,9 @@ const main = async () => {
     connectionString: 'couchbase://localhost',
     bucketName: 'default',
     username: 'Administrator',
-    password: 'password'
+    password: 'password',
+    scopeName: '_default', // Optional when _default
+    collectionName: '_default', // Optional when _default
   });
   
   await ottoman.start();
