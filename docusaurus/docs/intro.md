@@ -45,7 +45,11 @@ const main = async () => {
 
   const User = model('User', { name: String });
 
-  const user = new User({ name: 'Jane Doe' });
+  const user = new User({ name: 'Jane Doe' },{
+    // Optional if you use the _default scope and or collection
+    scopeName: '_default',
+    collectionName: '_default',
+  });
 
   await start();
 
